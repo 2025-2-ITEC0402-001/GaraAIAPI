@@ -1,0 +1,16 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Conda 환경 폴더 (만약 있다면)
+.env/
+env/
+venv/
+*.env
+
+# VS Code 설정 폴더
+.vscode/
+
+# 기타 OS 파일
+.DS_Store
