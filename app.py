@@ -36,5 +36,7 @@ def read_root():
     }
 
 if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8000)) 
+    
     # 로컬 테스트 시: python app.py 실행
-    uvicorn.run("app:app", host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run("app:app", host="0.0.0.0", port=port, reload=True)
