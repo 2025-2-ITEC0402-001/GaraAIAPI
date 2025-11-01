@@ -92,9 +92,6 @@ curl 'http://localhost:8000/status/UUID-HERE'
 # 다운로드 시 반드시 --output 옵션을 사용하여 파일로 저장해야 함.
 curl -X GET "http://localhost:8000/api_jobs/{UUID-HERE}/output/generated_video.mp4" --output final_video.mp4
 ```
-```bash
-curl -X GET "http://localhost:8000/api_jobs/{UUID-HERE}/output/generated_video.mp4" --output final_video.mp4
-```
 <img width="590" height="742" alt="image" src="https://github.com/user-attachments/assets/2a98643b-02d9-425c-a239-4e7ed8eb73e7" />  
 
 
