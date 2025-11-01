@@ -26,6 +26,7 @@
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **Request** | `/generate` | POST | **Multipart** (3 Files + Form Data) | **JSON** (Job ID) | 비동기 작업을 시작하고, 작업이 완료되는 데 **10초**가 소요됩니다. |
 | **Status** | `/status/{job_id}` | GET | **Path Param** (Job ID) | **JSON** (Status) | 작업 완료 시 `api_jobs/{job_id}/output/generated_video.mp4` 경로를 가리키는 URL을 반환. | 
+| **Download** | `/api_jobs/{path_to_file}` | GET | **URL Path** | **Video File** | 반환된 URL 경로를 통해 최종 영상을 다운로드. |
 
 ---
 ## 4. 테스트 예시 (Curl)   
@@ -86,6 +87,11 @@ curl 'http://localhost:8000/status/UUID-HERE'
 
 
 - 최종 영상 다운로드:
+```bash
+# {UUID-HERE} 자리에 Job ID를 넣어 전체 경로로 GET 요청 보냄
+# 다운로드 시 반드시 --output 옵션을 사용하여 파일로 저장해야 함.
+curl -X GET "http://localhost:8000/api_jobs/{UUID-HERE}/output/generated_video.mp4" --output final_video.mp4
+```
 ```bash
 curl -X GET "http://localhost:8000/api_jobs/{UUID-HERE}/output/generated_video.mp4" --output final_video.mp4
 ```
